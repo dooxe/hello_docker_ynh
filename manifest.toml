@@ -3,6 +3,7 @@ packaging_format = 2
 id = "hello_docker_ynh"
 name = "hello_docker_ynh"
 version = "0.1~ynh3"
+description.fr = "Hello world Docker YNH"
 
 maintainers = ["dooxe"]
 
