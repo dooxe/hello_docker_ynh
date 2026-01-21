@@ -1,0 +1,21 @@
+#!/bin/bash
+
+source /usr/share/yunohost/helpers
+
+if [ "$(docker container ls | grep 'hello-docker-ynh')" != "" ]; 
+then
+    docker rm hello-docker-ynh
+fi 
+
+# Build and run the docker image 
+ynh_script_progression "Building and running the docker image..."
+docker buildx build -t hello-docker-ynh ..
+docker run -d --name hello-docker-ynh -p $port:3000 hello-docker-ynh
+
+#=================================================
+# NGINX CONFIGURATION
+#=================================================
+ynh_script_progression "Configuring NGINX web server..."
+ynh_config_add_nginx
+
+

@@ -1,0 +1,21 @@
+{
+  "name": "hello_docker_ynh",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "start" : "vite-node ./src/index.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://github.com/dooxe/hello_docker_ynh",
+  "dependencies": {
+    "koa": "^3.1.1",
+    "vite-node": "^5.3.0"
+  },
+  "devDependencies": {
+    "@types/koa": "^3.0.1"
+  }
+}

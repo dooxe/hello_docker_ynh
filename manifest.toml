@@ -1,0 +1,54 @@
+packaging_format = 2
+
+id = "hello_docker_ynh"
+name = "hello_docker_ynh"
+version = "0.1~ynh3"
+
+maintainers = ["dooxe"]
+
+[upstream]
+license = "WTFPL"
+
+
+[integration]
+yunohost = ">= 12.0.9"
+helpers_version = "2.1"
+architectures = "all"
+multi_instance = false
+
+ldap = "not_relevant"
+sso = "not_relevant"
+
+disk = "1M"
+ram.build = "1M"
+ram.runtime = "1M"
+
+[install]
+    [install.domain]
+    # this is a generic question - ask strings are automatically handled by Yunohost's core
+    type = "domain"
+
+    [install.path]
+    # this is a generic question - ask strings are automatically handled by Yunohost's core
+    type = "path"
+    default = "/"
+
+    [install.init_main_permission]
+    type = "group"
+    default = "visitors"
+
+    [install.port]
+    type = "number"
+    default = 3000
+
+[resources]
+    [resources.system_user]
+
+    [resources.install_dir]
+    group = "www-data:r-x"
+
+    [resources.permissions]
+    main.url = "/"
+
+    [resources.apt]
+    packages = "docker"
